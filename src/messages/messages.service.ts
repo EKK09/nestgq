@@ -1,11 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import { CreateMessageInput } from './dto/create-message.input';
 import { UpdateMessageInput } from './dto/update-message.input';
+import { Message } from './entities/message.entity';
 
 @Injectable()
 export class MessagesService {
   create(createMessageInput: CreateMessageInput) {
-    return 'This action adds a new message';
+    const newMessage = new Message();
+    newMessage.content = createMessageInput.content;
+    return newMessage;
   }
 
   findAll() {
