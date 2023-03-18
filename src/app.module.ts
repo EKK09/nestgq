@@ -12,6 +12,7 @@ import { MessagesModule } from './messages/messages.module';
       driver: ApolloDriver,
       playground: true,
       autoSchemaFile: true,
+      installSubscriptionHandlers: true,
     }),
     UsersModule,
     MessagesModule,
